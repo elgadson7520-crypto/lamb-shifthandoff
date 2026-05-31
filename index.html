@@ -184,11 +184,6 @@
         <div class="sub">Layered Process Audit — verify the 1st→2nd shift pass-off is executed to standard, line still running</div>
       </div>
     </div>
-    <div class="doc-chip">
-      <b>SW-451-AUD-001</b><br>
-      Source: SW-451-CR-001 Rev A<br>
-      Effective: May 30, 2026
-    </div>
   </header>
 
   <div class="toolbar no-print">
@@ -201,16 +196,13 @@
   <main>
     <!-- Reference block -->
     <div class="meta-grid">
-      <div class="cell"><span class="lbl">Document No.</span><span class="val">SW-451-AUD-001</span></div>
-      <div class="cell"><span class="lbl">Source Standard</span><span class="val">SW-451-CR-001 Rev A</span></div>
       <div class="cell"><span class="lbl">Equipment</span><span class="val">ASC FFG, MarquipWardUnited controls</span></div>
-      <div class="cell"><span class="lbl">Asset / Line</span><span class="val">Line 451 (feed asset 451-2)</span></div>
       <div class="cell"><span class="lbl">Facility</span><span class="val">Lamb &amp; Associates Packaging (SupplyOne)</span></div>
-      <div class="cell"><span class="lbl">Effective Date</span><span class="val">May 30, 2026</span></div>
     </div>
 
     <!-- Fill-in header -->
     <div class="fill-grid">
+      <div class="f"><label>Asset / Line</label><input type="text" id="assetLine" value="Line 451 (feed asset 451-2)"></div>
       <div class="f"><label>Audit Date</label><input type="date" id="auditDate"></div>
       <div class="f"><label>Shift Audited</label>
         <select id="shiftAudited">
@@ -231,7 +223,7 @@
     <div class="pwrap">
     <table class="audit" id="auditTable">
       <thead>
-        <tr><th class="num">#</th><th class="crit">Audit Criterion (per SW-451-CR-001)</th>
+        <tr><th class="num">#</th><th class="crit">Audit Criterion</th>
             <th class="mark">C</th><th class="mark">NC</th><th class="mark">N/A</th><th class="note">Finding / Notes</th></tr>
       </thead>
       <tbody id="auditBody"><!-- rows injected --></tbody>
@@ -268,7 +260,7 @@
   </main>
 
   <footer class="foot">
-    SupplyOne · Continuous Improvement — Southwest Region &nbsp;|&nbsp; Layered Process Audit SW-451-AUD-001 &nbsp;|&nbsp; Controlled document — record retained per facility QMS.
+    SupplyOne · Continuous Improvement — Southwest Region &nbsp;|&nbsp; Continuous Run Shift Pass-Off Audit &nbsp;|&nbsp; Living document — update as the process improves.
   </footer>
 </div>
 
@@ -355,9 +347,10 @@ function val(id){return (document.getElementById(id)||{}).value||'';}
 function buildSummary(){
   recalc();
   const L=[];
-  L.push('CONTINUOUS RUN — SHIFT PASS-OFF AUDIT  (SW-451-AUD-001)');
+  L.push('CONTINUOUS RUN — SHIFT PASS-OFF AUDIT');
   L.push('Line 451 · Lamb & Associates Packaging (SupplyOne)');
   L.push('====================================================');
+  L.push('Asset / Line:  '+val('assetLine'));
   L.push('Audit Date:    '+val('auditDate'));
   L.push('Shift:         '+val('shiftAudited'));
   L.push('Job # Observed:'+val('jobNo'));
